@@ -1,0 +1,166 @@
+2015-08-06 11:12:20  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6d7accc9: startup date [Thu Aug 06 11:12:20 CST 2015]; root of context hierarchy
+2015-08-06 11:12:20  [ main:522 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:12:20  [ main:524 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:12:21  [ main:871 ] - [ INFO ]  Mapped "{[/helloWorld],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String controllers.HelloWorldController.helloWorld(org.springframework.ui.Model)
+2015-08-06 11:12:21  [ main:922 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultServletHandlerMapping' defined in class org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method 'defaultServletHandlerMapping' threw exception; nested exception is java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1119)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.context.annotation.AnnotationConfigApplicationContext.<init>(AnnotationConfigApplicationContext.java:84)
+	at tests.SpringConfigTests.init(SpringConfigTests.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method 'defaultServletHandlerMapping' threw exception; nested exception is java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 28 more
+Caused by: java.lang.IllegalArgumentException: A ServletContext is required to configure default servlet handling
+	at org.springframework.util.Assert.notNull(Assert.java:112)
+	at org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer.<init>(DefaultServletHandlerConfigurer.java:53)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.defaultServletHandlerMapping(WebMvcConfigurationSupport.java:426)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$b04f33fe.CGLIB$defaultServletHandlerMapping$26(<generated>)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$b04f33fe$$FastClassBySpringCGLIB$$b43bc007.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration$$EnhancerBySpringCGLIB$$b04f33fe.defaultServletHandlerMapping(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 29 more
+2015-08-06 11:13:38  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@29f10c35: startup date [Thu Aug 06 11:13:38 CST 2015]; root of context hierarchy
+2015-08-06 11:13:38  [ main:310 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:13:38  [ main:312 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:18:03  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3b8c282a: startup date [Thu Aug 06 11:18:03 CST 2015]; root of context hierarchy
+2015-08-06 11:18:04  [ main:283 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:18:04  [ main:286 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:26:20  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2282d3bc: startup date [Thu Aug 06 11:26:20 CST 2015]; root of context hierarchy
+2015-08-06 11:26:21  [ main:264 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:26:21  [ main:265 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:26:53  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@64d40911: startup date [Thu Aug 06 11:26:53 CST 2015]; root of context hierarchy
+2015-08-06 11:26:54  [ main:285 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:26:54  [ main:287 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:27:48  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6ea0fbf0: startup date [Thu Aug 06 11:27:48 CST 2015]; root of context hierarchy
+2015-08-06 11:27:48  [ main:287 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:27:48  [ main:289 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:28:01  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3b8c282a: startup date [Thu Aug 06 11:28:01 CST 2015]; root of context hierarchy
+2015-08-06 11:28:01  [ main:311 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:28:01  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:31:25  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6ea0fbf0: startup date [Thu Aug 06 11:31:25 CST 2015]; root of context hierarchy
+2015-08-06 11:31:25  [ main:279 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:31:25  [ main:281 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:31:45  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6038ba04: startup date [Thu Aug 06 11:31:45 CST 2015]; root of context hierarchy
+2015-08-06 11:31:45  [ main:292 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:31:45  [ main:294 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:35:16  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3b8c282a: startup date [Thu Aug 06 11:35:16 CST 2015]; root of context hierarchy
+2015-08-06 11:35:17  [ main:327 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:35:17  [ main:329 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 11:38:16  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6ea0fbf0: startup date [Thu Aug 06 11:38:16 CST 2015]; root of context hierarchy
+2015-08-06 11:38:16  [ main:287 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 11:38:16  [ main:289 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 14:29:11  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1c9f6ece: startup date [Thu Aug 06 14:29:11 CST 2015]; root of context hierarchy
+2015-08-06 14:29:11  [ main:284 ] - [ INFO ]  Loading properties file from class path resource [jdbc-production.properties]
+2015-08-06 14:29:11  [ main:287 ] - [ INFO ]  Loading properties file from class path resource [authorization.properties]
+2015-08-06 16:38:43  [ main:1 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7292e1b2: startup date [Thu Aug 06 16:38:43 CST 2015]; root of context hierarchy
+2015-08-06 16:38:44  [ main:275 ] - [ WARN ]  Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment configs.MysqlConfig.env
+2015-08-06 16:38:44  [ main:346 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'getDataSource' defined in configs.MysqlConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'getDataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1119)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.context.annotation.AnnotationConfigApplicationContext.<init>(AnnotationConfigApplicationContext.java:84)
+	at tests.MysqlTests.init(MysqlTests.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'getDataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 28 more
+Caused by: java.lang.NullPointerException
+	at configs.MysqlConfig.getDataSource(MysqlConfig.java:25)
+	at configs.MysqlConfig$$EnhancerBySpringCGLIB$$a7ba1183.CGLIB$getDataSource$0(<generated>)
+	at configs.MysqlConfig$$EnhancerBySpringCGLIB$$a7ba1183$$FastClassBySpringCGLIB$$a782dd02.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309)
+	at configs.MysqlConfig$$EnhancerBySpringCGLIB$$a7ba1183.getDataSource(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 29 more
+2015-08-06 16:39:49  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@91fa7e2: startup date [Thu Aug 06 16:39:49 CST 2015]; root of context hierarchy
+2015-08-06 16:40:52  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1fe30f8: startup date [Thu Aug 06 16:40:52 CST 2015]; root of context hierarchy
+2015-08-06 16:41:08  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2484ada4: startup date [Thu Aug 06 16:41:08 CST 2015]; root of context hierarchy
+2015-08-06 16:44:26  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-08-06 16:44:26  [ main:142 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Thu Aug 06 16:44:26 CST 2015]; root of context hierarchy
+2015-08-06 16:44:27  [ main:219 ] - [ INFO ]  Successfully resolved class for [configs.SpringRootConfig]
+2015-08-06 16:44:27  [ main:562 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 558 ms
+2015-08-06 16:44:27  [ main:712 ] - [ INFO ]  FrameworkServlet 'example': initialization started
+2015-08-06 16:44:27  [ main:715 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'example-servlet': startup date [Thu Aug 06 16:44:27 CST 2015]; parent: Root WebApplicationContext
+2015-08-06 16:44:27  [ main:720 ] - [ INFO ]  Successfully resolved class for [configs.WebConfig]
+2015-08-06 16:44:33  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@275d13c3: startup date [Thu Aug 06 16:44:33 CST 2015]; root of context hierarchy
+2015-08-06 16:45:24  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4fbc7b65: startup date [Thu Aug 06 16:45:24 CST 2015]; root of context hierarchy
+2015-08-06 16:49:08  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7c27a30c: startup date [Thu Aug 06 16:49:08 CST 2015]; root of context hierarchy
+2015-08-06 16:56:55  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@e41a882: startup date [Thu Aug 06 16:56:55 CST 2015]; root of context hierarchy
+2015-08-06 16:57:22  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7c27a30c: startup date [Thu Aug 06 16:57:22 CST 2015]; root of context hierarchy
+2015-08-06 17:06:17  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7c27a30c: startup date [Thu Aug 06 17:06:17 CST 2015]; root of context hierarchy
+2015-08-06 17:06:28  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7c27a30c: startup date [Thu Aug 06 17:06:28 CST 2015]; root of context hierarchy
+2015-08-06 17:16:56  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7c27a30c: startup date [Thu Aug 06 17:16:56 CST 2015]; root of context hierarchy
+2015-08-06 17:17:08  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@e41a882: startup date [Thu Aug 06 17:17:08 CST 2015]; root of context hierarchy
+2015-08-06 17:17:15  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@e41a882: startup date [Thu Aug 06 17:17:15 CST 2015]; root of context hierarchy
+2015-08-06 17:17:15  [ main:843 ] - [ INFO ]  Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2015-08-06 17:17:16  [ main:1067 ] - [ INFO ]  SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2015-08-06 17:17:32  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@63d8aaba: startup date [Thu Aug 06 17:17:32 CST 2015]; root of context hierarchy
+2015-08-06 17:17:38  [ main:6917 ] - [ INFO ]  Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2015-08-06 17:17:39  [ main:7083 ] - [ INFO ]  SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2015-08-06 17:18:29  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@63d8aaba: startup date [Thu Aug 06 17:18:29 CST 2015]; root of context hierarchy
+2015-08-06 17:22:27  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@31732b56: startup date [Thu Aug 06 17:22:27 CST 2015]; root of context hierarchy
+2015-08-06 18:11:34  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@223477: startup date [Thu Aug 06 18:11:34 CST 2015]; root of context hierarchy
+2015-08-06 18:12:19  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@31732b56: startup date [Thu Aug 06 18:12:19 CST 2015]; root of context hierarchy
