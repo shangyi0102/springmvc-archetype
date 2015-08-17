@@ -5,16 +5,16 @@ package utils;
 
 import java.io.IOException;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonUtil {
-
+	private static final ObjectMapper mapper = new ObjectMapper();
 	private JsonUtil(){}
 
 	public static <T> T parseObject(String json,Class<T> clazz) {
 			T readValue = null;
 			try {
-				readValue = new ObjectMapper().readValue(json, clazz);
+				readValue = mapper.readValue(json, clazz);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -23,7 +23,7 @@ public class JsonUtil {
 
 	public static String toJSONString(Object object){
 		try {
-			return new ObjectMapper().writeValueAsString(object);
+			return mapper.writeValueAsString(object);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

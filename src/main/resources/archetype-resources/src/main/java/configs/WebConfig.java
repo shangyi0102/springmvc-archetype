@@ -23,9 +23,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		registry.jsp("/", ".jsp");
 	}
 
-	@Override
-	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-		super.configureMessageConverters(converters);
+//	@Override
+//	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+//		super.configureMessageConverters(converters);
 //		StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
 //		List<MediaType> list = new ArrayList<MediaType>();
 //		list.add(MediaType.APPLICATION_JSON);
@@ -35,5 +35,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //		list.add(MediaType.TEXT_HTML);
 //		stringHttpMessageConverter.setSupportedMediaTypes(list);
 //		converters.add(stringHttpMessageConverter);
-	}
+//	}
 }

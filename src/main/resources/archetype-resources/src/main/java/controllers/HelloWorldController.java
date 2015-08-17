@@ -19,6 +19,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import beans.Person;
 import validators.PersonValidator;
@@ -68,5 +69,21 @@ public class HelloWorldController {
     	
         model.addAttribute("message", "Hello World!");
         return "index";
+    }
+    
+    @RequestMapping("/helloJSON")
+    public @ResponseBody Person helloJSON(@Validated @ModelAttribute("person") Person person, BindingResult res, Model model) {
+    	if (res.hasErrors()) {
+    		if (!res.getAllErrors().isEmpty()) {
+    			for (ObjectError e : res.getAllErrors()) {
+    				log.debug(getMsg(e, null));
+    			}
+    		}
+    	} else {
+    		
+    	}
+    	
+        model.addAttribute("message", "Hello World!");
+        return person;
     }
 }

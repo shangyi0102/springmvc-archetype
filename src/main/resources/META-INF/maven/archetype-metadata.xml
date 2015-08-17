@@ -44,6 +44,7 @@
       <directory>logs</directory>
       <includes>
         <include>**/*.2015-08-05</include>
+        <include>**/*.2015-08-06</include>
         <include>**/*.log</include>
       </includes>
     </fileSet>
