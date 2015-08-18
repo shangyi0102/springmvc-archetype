@@ -56,7 +56,7 @@ public class IDGeneratorImpl implements IDGenerator {
 	
 	@Override
 	public String getIDStr() {
-		return UUID.randomUUID().toString();
+		return UUID.randomUUID().toString().replace("-", "");
 	}
 	
 	public static void main(String[] args) throws InterruptedException {

@@ -12,6 +12,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 
 import beans.Person;
+import utils.IDGenerator;
+import utils.IDGeneratorImpl;
 
 @Configuration
 @Import(DBConfig.class)
@@ -31,5 +33,10 @@ public class SpringRootConfig {
 	public Person getPerson() {
 		System.out.println(env.getProperty("auth.usrs"));
 		return new Person();
+	}
+	
+	@Bean
+	public IDGenerator getID() {
+		return new IDGeneratorImpl();
 	}
 }
